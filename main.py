@@ -104,7 +104,49 @@ class Recorder(object):
         
         print("files in pwd")
         print(os.listdir())
-        print("finished creating wav file")        
+        print("finished creating wav file")     
+        self.play()
+        
+        
+    def play(self):
+        MediaPlayer = autoclass('android.media.MediaPlayer')
+        AudioManager = autoclass('android.media.AudioManager')
+
+        self.sound = MediaPlayer()
+        #self.sound.setDataSource(yourDataSource) #you can provide any data source, if its on the devie then the file path, or its url if you are playing online
+        #self.sound.setDataSource('testaudio.mp4') 
+        #self.audio_path = self.storage_path + "/wav/output2.wav"
+        #self.audio_path = self.storage_path + "/wav/output1.wav" ##cant find folder
+     
+        
+        
+        
+        #self.audio_path = dirCheck1 + "/wav/output1.wav"
+        #self.audio_path = "/storage/emulated/0/org.example.c4k_tflite_audio1/wav/output1.wav"##Not found
+        #self.audio_path = "/data/data/org.example.c4k_tflite_audio1/files/app/wav/output2.wav"
+        #self.audio_path = "/data/data/org.example.c4k_tflite_audio1/files/app/output2.wav"        
+        #self.audio_path  = "/data/data/org.example.c4k_tflite_audio1/files/app/testaudio.mp4"
+        self.audio_path  = "rec_test1.wav"
+     
+        self.sound.setDataSource(self.audio_path) 
+        self.sound.prepare()
+        self.sound.setLooping(False) #you can set it to true if you want to loop
+        self.sound.start()
+        print("start play")
+
+        e = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+       
+        print("time of start playing audio")
+        print(e)
+        # You can also use the following according to your needs
+        #self.sound.pause()
+        #self.sound.stop()
+        #self.sound.release()
+        #self.sound.getCurrentPosition()
+        #self.sound.getDuration()              
+        
+        
+           
  
 REC = Recorder()
 '''
