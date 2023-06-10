@@ -20,7 +20,7 @@ from array import array
 #if not os.path.isdir("/sdcard/kivyrecords/"):
 #    os.mkdir("/sdcard/kivyrecords/")
 
-PATH = "rec_test.wav"
+PATH = "rec_test1.wav"
  
 recordtime = 5
 samples_per_second = 60
@@ -101,6 +101,10 @@ class Recorder(object):
         wf.writeframes(b''.join(self.sData))
         print("we at stop")
         wf.close()
+        
+        print("files in pwd")
+        print(os.listdir())
+        print("finished creating wav file")        
  
 REC = Recorder()
 '''
