@@ -105,6 +105,10 @@ class Recorder(object):
         
         print("files in pwd")
         print(os.listdir())
+        
+        print("contents of sData")
+        print(sData)
+        
         print("finished creating wav file")     
         self.play()
         
