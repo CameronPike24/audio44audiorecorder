@@ -107,7 +107,7 @@ class Recorder(object):
         print(os.listdir())
         
         print("contents of sData")
-        print(sData)
+        print(self.sData)
         
         print("finished creating wav file")     
         self.play()
