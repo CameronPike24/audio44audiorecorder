@@ -42,7 +42,8 @@ class Recorder(object):
         self.AudioFormat = autoclass('android.media.AudioFormat')
         self.AudioRecord = autoclass('android.media.AudioRecord')
     # define our system
-        self.SampleRate = 44100
+        #self.SampleRate = 44100
+        self.SampleRate = 16000
         self.ChannelConfig = self.AudioFormat.CHANNEL_IN_MONO
         self.AudioEncoding = self.AudioFormat.ENCODING_PCM_16BIT
         self.BufferSize = self.AudioRecord.getMinBufferSize(self.SampleRate, self.ChannelConfig, self.AudioEncoding)
